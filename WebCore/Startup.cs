@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using WebCore.Filter;
 using WebCore.Model;
 using WebCore.Services;
 
@@ -30,18 +31,24 @@ namespace WebCore
         {
             services.AddMvc();
 
+            //services.AddMvc(o => //全局注册Filter
+            //{
+            //    o.Filters.Add(typeof(ExceptionFilter));
+            //});
+
             //授权过滤器 Authorize
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, f => {
                 f.LoginPath = new PathString("/Home/Login");
             });
 
+            //IOC 
             services.AddTransient<IPersonService, PersonService>();
 
             //配置文件
             services.Configure<PersonConfig>(_configuration.GetSection(nameof(PersonConfig)));
 
-            //EFCore
-            services.AddDbContextPool<MyContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
+            //EFCore  
+            services.AddDbContext<MyContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

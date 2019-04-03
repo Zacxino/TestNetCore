@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestCore", "TestCore\TestCore.csproj", "{A999E3AC-9F3C-4BF3-990E-10FBD917D1EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCore", "..\WebCore\WebCore.csproj", "{F9C2652A-3E72-4CCB-B9FB-5BB878325742}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCore", "..\WebCore\WebCore.csproj", "{F9C2652A-3E72-4CCB-B9FB-5BB878325742}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore2_2.MVC", "NetCore2_2.MVC\NetCore2_2.MVC.csproj", "{E51C1008-15A0-42F9-A3A1-2227B465E113}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F9C2652A-3E72-4CCB-B9FB-5BB878325742}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9C2652A-3E72-4CCB-B9FB-5BB878325742}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9C2652A-3E72-4CCB-B9FB-5BB878325742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51C1008-15A0-42F9-A3A1-2227B465E113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51C1008-15A0-42F9-A3A1-2227B465E113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51C1008-15A0-42F9-A3A1-2227B465E113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51C1008-15A0-42F9-A3A1-2227B465E113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
