@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using WebCore.Filter;
+using WebCore.Middleware;
 using WebCore.Model;
 using WebCore.Services;
 
@@ -60,8 +61,9 @@ namespace WebCore
             }
 
             //注册middleware Run注册终结点
-            //app.Run(async (HttpContext context) => {
-            //    await context.Response.WriteAsync("Hello Asp.Net Core");    
+            //app.Run(async (HttpContext context) =>
+            //{
+            //    await context.Response.WriteAsync("Hello Asp.Net Core");
             //});
 
             //use 写法一：
@@ -86,7 +88,7 @@ namespace WebCore
             //});
 
             //use 写法二： 中间件 
-            //app.UseMiddleware<>();
+            app.UseMiddleware<MyMiddleWare>();
 
             //map:可以根据条件指定中间件 分发请求的
             //app.Map("/test", MapTest);
