@@ -24,6 +24,10 @@ namespace TestCore
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseHsts();
+            }
 
             app.Run(async (context) =>
             {
