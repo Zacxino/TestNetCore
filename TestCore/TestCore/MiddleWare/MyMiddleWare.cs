@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace WebCore.Middleware
+namespace TestCore.Middleware
 {
     public class MyMiddleWare
     {
@@ -16,12 +16,12 @@ namespace WebCore.Middleware
             _next = next;
         }
 
-        //public  Task Invoke(HttpContext context)
-        //{
-        //    context.Response.WriteAsync("Hello MyMiddleWare");
-        //    // Call the next delegate/middleware in the pipeline
-        //    return this._next(context);
-        //}
+        // public Task Invoke(HttpContext context)
+        // {
+        //     context.Response.WriteAsync("Hello MyMiddleWare");
+        //     // Call the next delegate/middleware in the pipeline
+        //     return this._next(context);
+        // }
 
         public async Task Invoke(HttpContext context)
         {
@@ -35,7 +35,7 @@ namespace WebCore.Middleware
                         context.Response.WriteAsync("Hello MyMiddleWare");
                     }
                 }
-                
+
                 return Task.FromResult(0);
             });
             await this._next(context);

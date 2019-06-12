@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using TestCore.Middleware;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,10 +30,12 @@ namespace TestCore
                 app.UseHsts();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseMiddleware<MyMiddleWare>();
+
+            // app.Run(async (context) =>
+            // {
+            //     await context.Response.WriteAsync("Hello World!");
+            // });
         }
     }
 }
